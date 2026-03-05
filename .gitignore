@@ -1,0 +1,23 @@
+# XcodeGen: .xcodeproj is generated from project.yml — never commit it
+*.xcodeproj/
+
+# Xcode user data
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+
+# macOS
+.DS_Store
+
+# Build artifacts
+build/
+DerivedData/
+
+# Future dependency managers
+.build/
+.swiftpm/
+Pods/
+Podfile.lock
+
+# Claude
+.claude/
