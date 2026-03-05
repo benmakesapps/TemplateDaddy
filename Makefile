@@ -5,7 +5,7 @@ SIMULATOR     = platform=iOS Simulator,name=iPhone 16,OS=latest
 
 .DEFAULT_GOAL := help
 
-.PHONY: help generate open build clean bootstrap rename
+.PHONY: help generate open build clean bootstrap rename scene api service
 
 # ── Help ──────────────────────────────────────────────────────────────────────
 
@@ -43,3 +43,12 @@ bootstrap: ## Install xcodegen if needed, then generate
 
 rename: ## Rename the project (usage: make rename NAME=MyNewApp)
 	@bash scripts/rename.sh "$(NAME)"
+
+scene: ## Scaffold a new scene (usage: make scene NAME=MyScene)
+	@bash scripts/scene.sh "$(NAME)"
+
+api: ## Scaffold a new API (usage: make api NAME=MyApi)
+	@bash scripts/api.sh "$(NAME)"
+
+service: ## Scaffold a new service (usage: make service NAME=MyService)
+	@bash scripts/service.sh "$(NAME)"

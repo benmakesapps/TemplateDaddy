@@ -1,24 +1,24 @@
+////
+////  ContentView.swift
+////  TemplateDaddy
+////
+////  Created by Benjamin Kelsey on 3/5/26.
+////
 //
-//  ContentView.swift
-//  TemplateDaddy
+//import SwiftUI
 //
-//  Created by Benjamin Kelsey on 3/5/26.
+//struct ContentView: View {
+//    var body: some View {
+//        VStack {
+//            Image(systemName: "globe")
+//                .imageScale(.large)
+//                .foregroundStyle(.tint)
+//            Text("Hello, world!")
+//        }
+//        .padding()
+//    }
+//}
 //
-
-import SwiftUI
-
-struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
-
-#Preview {
-    ContentView()
-}
+//#Preview {
+//    ContentView()
+//}

@@ -11,7 +11,8 @@ import SwiftUI
 struct TemplateDaddyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HelloWorldCoordinator()
+                .environment(ServiceProvider())
         }
     }
 }
