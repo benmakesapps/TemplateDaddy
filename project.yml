@@ -11,6 +11,10 @@ fileGroups:
   - Makefile
   - scripts
 
+packages:
+  Navigation:
+    path: Navigation
+
 settings:
   configs:
     Debug:
@@ -44,6 +48,10 @@ targets:
     sources:
       - path: TemplateDaddy
         type: syncedFolder
+
+    dependencies:
+      - package: Navigation
+        product: Navigation
 
     settings:
       base:

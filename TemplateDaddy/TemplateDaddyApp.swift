@@ -6,13 +6,20 @@
 //
 
 import SwiftUI
+import Navigation
 
 @main
 struct TemplateDaddyApp: App {
+    @State var serviceProvider = ServiceProvider()
+    let router = AppRouter()
+
     var body: some Scene {
         WindowGroup {
-            HelloWorldCoordinator()
-                .environment(ServiceProvider())
+            Stack(router: router) {
+                HelloWorldCoordinator()
+            }
+            .sheetStack(router: router)
         }
+        .environment(serviceProvider)
     }
 }

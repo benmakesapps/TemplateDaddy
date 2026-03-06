@@ -9,5 +9,6 @@ struct HelloWorldCoordinator: View {
 
     var body: some View {
         HelloWorldView(viewModel: viewModel)
+            .styledToolbar(.app)
     }
 }
