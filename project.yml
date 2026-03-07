@@ -74,7 +74,7 @@ targets:
         INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
-        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait"
         LD_RUNPATH_SEARCH_PATHS:
           - "$(inherited)"
           - "@executable_path/Frameworks"
@@ -87,3 +87,20 @@ targets:
     scheme:
       testTargets: []
       gatherCoverageData: false
+      
+  Tests:
+    type: bundle.unit-test
+    platform: iOS
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+    sources:
+      - Tests
+    dependencies:
+      - target: TemplateDaddy
+    scheme:
+      gatherCoverageData: true
+      testTargets:
+        - name: Tests
+          parallelizable: true
+          randomExecutionOrder: true
