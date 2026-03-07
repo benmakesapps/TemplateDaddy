@@ -14,6 +14,8 @@ fileGroups:
 packages:
   Navigation:
     path: Navigation
+  Location:
+    path: Location
 
 settings:
   configs:
@@ -52,6 +54,8 @@ targets:
     dependencies:
       - package: Navigation
         product: Navigation
+      - package: Location
+        product: Location
 
     settings:
       base:
