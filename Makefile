@@ -5,7 +5,7 @@ SIMULATOR     = platform=iOS Simulator,name=iPhone 16,OS=latest
 
 .DEFAULT_GOAL := help
 
-.PHONY: help generate open build clean bootstrap rename scene api service
+.PHONY: help generate open build clean bootstrap rename scene api service package
 
 # ── Help ──────────────────────────────────────────────────────────────────────
 
@@ -52,3 +52,6 @@ api: ## Scaffold a new API (usage: make api NAME=MyApi)
 
 service: ## Scaffold a new service (usage: make service NAME=MyService)
 	@bash scripts/service.sh "$(NAME)"
+
+package: ## Scaffold a new Swift package (usage: make package NAME=MyPackage)
+	@bash scripts/package.sh "$(NAME)"
