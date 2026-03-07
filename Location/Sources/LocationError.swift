@@ -1,19 +1,5 @@
 import Foundation
 
-/// Errors that ``LocationManager`` can throw.
-///
-/// Use these to handle common failure modes when requesting
-/// the user's location.
-///
-/// ```swift
-/// do {
-///     let location = try await locationManager.currentLocation()
-/// } catch LocationError.unauthorized {
-///     // Prompt the user to enable location in Settings
-/// } catch LocationError.unavailable {
-///     // Location services are disabled system-wide
-/// }
-/// ```
 public enum LocationError: LocalizedError {
     /// The user has denied or restricted location access.
     case unauthorized
@@ -37,6 +23,18 @@ public enum LocationError: LocalizedError {
             "Location request timed out."
         case .underlying(let error):
             error.localizedDescription
+        }
+    }
+}
+
+extension LocationError: Equatable {
+    public static func == (lhs: LocationError, rhs: LocationError) -> Bool {
+        switch (lhs, rhs) {
+        case (.unauthorized, .unauthorized): true
+        case (.unavailable, .unavailable): true
+        case (.timeout, .timeout): true
+        case (.underlying(let l), .underlying(let r)): l.localizedDescription == r.localizedDescription
+        default: false
         }
     }
 }

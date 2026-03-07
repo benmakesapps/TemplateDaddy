@@ -21,7 +21,7 @@ import os
 ///
 @MainActor
 @Observable
-public final class LocationManager {
+public final class LocationManager: LocationManagerProtocol {
 
     // MARK: - Reactive State
 
