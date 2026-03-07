@@ -16,7 +16,8 @@ struct TemplateDaddyApp: App {
     var body: some Scene {
         WindowGroup {
             Stack(router: router) {
-                HelloWorldCoordinator()
+                Text("Hello World")
+                    .appToolbar()
             }
             .sheetStack(router: router)
         }

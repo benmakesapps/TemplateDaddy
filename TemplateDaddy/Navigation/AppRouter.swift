@@ -13,9 +13,11 @@ struct AppRouter: Router {
     func view(for destination: AppDestination) -> some View {
         switch destination {
         case .helloWorld:
-            HelloWorldCoordinator()
+            Text("Hello World")
+                .appToolbar()
         case .settings:
-            SettingsCoordinator()
+            Text("Settings")
+                .sheetToolbar()
         }
     }
 }
