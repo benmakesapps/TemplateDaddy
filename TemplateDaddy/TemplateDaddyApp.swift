@@ -11,15 +11,14 @@ import Navigation
 @main
 struct TemplateDaddyApp: App {
     @State var serviceProvider = ServiceProvider()
-    let router = AppRouter()
 
     var body: some Scene {
         WindowGroup {
-            Stack(router: router) {
+            Stack(router: AppRouter()) {
                 Text("Hello World")
                     .appToolbar()
             }
-            .sheetStack(router: router)
+            .sheetStack(router: AppRouter())
         }
         .environment(serviceProvider)
     }
