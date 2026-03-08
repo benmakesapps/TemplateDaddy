@@ -16,6 +16,8 @@ packages:
     path: Navigation
   Location:
     path: Location
+  Weather:
+    path: Weather
 
 settings:
   configs:
@@ -56,6 +58,8 @@ targets:
         product: Navigation
       - package: Location
         product: Location
+      - package: Weather
+        product: Weather
 
     settings:
       base:
