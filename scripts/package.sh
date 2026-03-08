@@ -19,6 +19,8 @@ fi
 
 mkdir -p "$NAME/Sources"
 
+mkdir -p "$NAME/Tests"
+
 cat > "$NAME/Package.swift" <<SWIFT
 // swift-tools-version: 6.0
 import PackageDescription
@@ -30,7 +32,7 @@ let package = Package(
         .library(name: "$NAME", targets: ["$NAME"]),
     ],
     targets: [
-        .target(name: "$NAME"),
+        .target(name: "$NAME"), .testTarget(name: "$NAME"+"Tests", dependencies: ["$NAME"])
     ]
 )
 SWIFT
@@ -39,8 +41,19 @@ cat > "$NAME/Sources/$NAME.swift" <<SWIFT
 // $NAME
 SWIFT
 
+cat > "$NAME/Tests/Tests.swift" <<SWIFT
+import Testing
+
+struct Tests {
+    @Test func truePasses() async throws {
+        #expect(true)
+    }
+}
+SWIFT
+
 echo "  Created $NAME/Package.swift"
 echo "  Created $NAME/Sources/$NAME.swift"
+echo "  Created $NAME/Tests/$NAME.swift"
 
 # ── Wire into project.yml ────────────────────────────────────────────────────
 
