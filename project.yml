@@ -12,10 +12,11 @@ fileGroups:
   - scripts
 
 packages:
-  Navigation:
-    path: Navigation
   Weather:
     path: Weather
+  Navigation:
+    url: https://github.com/benmakesapps/Navigation.git
+    from: 1.0.0
 
 settings:
   configs:
@@ -52,10 +53,10 @@ targets:
         type: syncedFolder
 
     dependencies:
-      - package: Navigation
-        product: Navigation
       - package: Weather
         product: Weather
+      - package: Navigation
+        product: Navigation
 
     settings:
       base:
