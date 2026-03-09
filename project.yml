@@ -14,8 +14,6 @@ fileGroups:
 packages:
   Navigation:
     path: Navigation
-  Location:
-    path: Location
   Weather:
     path: Weather
 
@@ -56,8 +54,6 @@ targets:
     dependencies:
       - package: Navigation
         product: Navigation
-      - package: Location
-        product: Location
       - package: Weather
         product: Weather
 
