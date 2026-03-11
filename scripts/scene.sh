@@ -11,7 +11,7 @@ if [ -z "$NAME" ]; then
 fi
 
 SRC=$(grep '^name:' project.yml | awk '{print $2}')
-DEST="$SRC/Scenes/$NAME"
+DEST="Source/Scenes/$NAME"
 
 if [ -d "$DEST" ]; then
   echo "Scene '$NAME' already exists at $DEST"

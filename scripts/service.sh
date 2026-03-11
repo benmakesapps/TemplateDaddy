@@ -12,7 +12,7 @@ fi
 
 SRC=$(grep '^name:' project.yml | awk '{print $2}')
 CAMEL="$(echo "${NAME:0:1}" | tr '[:upper:]' '[:lower:]')${NAME:1}"
-FILE="$SRC/Services/${NAME}Service.swift"
+FILE="Source/Services/${NAME}Service.swift"
 
 if [ -f "$FILE" ]; then
   echo "Service '$NAME' already exists at $FILE"

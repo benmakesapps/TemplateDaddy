@@ -11,7 +11,7 @@ if [ -z "$NAME" ]; then
 fi
 
 SRC=$(grep '^name:' project.yml | awk '{print $2}')
-FILE="$SRC/API/${NAME}API.swift"
+FILE="Source/API/${NAME}API.swift"
 
 if [ -f "$FILE" ]; then
   echo "API '$NAME' already exists at $FILE"
